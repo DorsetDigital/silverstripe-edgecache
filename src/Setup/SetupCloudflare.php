@@ -81,7 +81,7 @@ class SetupCloudflare extends BuildTask
         ]);
 
         $client = new Client(['headers' => $headers]);
-        $response = $client->request('PUT', $uri, ['body' => $bodyData]);
+        $response = $client->request('POST', $uri, ['body' => $bodyData]);
 
         $resCode = (int)$response->getStatusCode();
         if (($resCode > 300) || ($resCode < 200)) {
