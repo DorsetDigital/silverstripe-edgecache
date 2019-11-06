@@ -85,27 +85,17 @@ class SetupCloudflare extends BuildTask
 
         $resCode = (int)$response->getStatusCode();
         if (($resCode > 300) || ($resCode < 200)) {
-            //return false;
+            return false;
         }
-
-        echo "<br/>Status: ".$resCode;
 
         $body = $response->getBody();
-
-        echo "<pre>".$body."</pre>";
-
         $responseData = json_decode($body, true);
 
-        echo "<pre>";
-        var_dump($responseData);
-        echo "</pre>";
-
-        if (!$responseData || (!isset($responseData['id']))) {
-            //return false;
+        if (!$responseData || (!isset($responseData['result']['id']))) {
+            return false;
         }
 
-        return $responseData['id'];
-
+        return $responseData['result']['id'];
     }
 
 
