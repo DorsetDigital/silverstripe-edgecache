@@ -1,0 +1,27 @@
+{
+  "name": "dorsetdigital/silverstripe-edgecache",
+  "description": "Dynamically cache Silverstripe pages using serverless edge nodes",
+  "type": "silverstripe-vendormodule",
+  "homepage": "https://github.com/DorsetDigital/silverstripe-edgecache",
+  "keywords": ["silverstripe", "cdn", "serverless", "caching"],
+  "authors": [
+    {
+      "name": "Tim Burt",
+      "email": "tim@dorset-digital.net"
+    }
+  ],
+  "require": {
+    "silverstripe/vendor-plugin": "^1.0",
+    "silverstripe/cms": "^4.0",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "license": "BSD-3-Clause",
+  "autoload": {
+    "psr-4": {
+      "DorsetDigital\\EdgeCache\\": "src/"
+    }
+  },
+  "extra": {
+  },
+  "minimum-stability": "dev"
+}
