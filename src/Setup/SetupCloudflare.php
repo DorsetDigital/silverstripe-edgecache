@@ -88,7 +88,7 @@ class SetupCloudflare extends BuildTask
             return false;
         }
 
-        $responseData = json_decode($response->getBody());
+        $responseData = json_decode($response->getBody(), true);
 
         if (!$responseData || (!isset($responseData['id']))) {
             return false;
