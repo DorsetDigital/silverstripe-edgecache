@@ -26,7 +26,17 @@ async function handleRequest(request) {
         let originResponse = await fetch(request)
         let response = new Response(originResponse.body, originResponse)
         response.headers.set('x-worker-debug', 'Origin Active')
-        response.headers.set('x-path', urlPath);
+        let originCache = response.headers.get('x-edgecache')
+        if (originCache && originCache.includes('enabled')) {
+            let originCacheTime = parseInt(response.headers.get('x-edgecache-time'))
+            if (originCacheTime < 0) {
+                kvstore.put(urlPath, originResponse.body)
+            } else {
+                kvstore.put(urlPath, originResponse.body, {expirationItl: originCacheTime})
+            }
+
+        }
+
         return response
     }
 }
