@@ -2,10 +2,6 @@
 Name: edgecacheextensions
 ---
 
-SilverStripe\SiteConfig\SiteConfig:
-  extensions:
-    - DorsetDigital\EdgeCache\Extension\ConfigExtension
-
 PageController:
   extensions:
     - DorsetDigital\EdgeCacher\ControllerExtension
