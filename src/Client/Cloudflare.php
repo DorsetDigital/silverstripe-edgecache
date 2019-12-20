@@ -9,7 +9,7 @@ use SilverStripe\Core\Config\Configurable;
 use SilverStripe\Core\Injector\Injectable;
 use SilverStripe\SiteConfig\SiteConfig;
 
-class Cloudflare implements EdgeCacher
+class Cloudflare
 {
 
     use Configurable;
