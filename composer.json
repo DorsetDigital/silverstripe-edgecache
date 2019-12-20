@@ -13,7 +13,7 @@
   "require": {
     "silverstripe/vendor-plugin": "^1.0",
     "silverstripe/cms": "^4.0",
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "^6.4"
   },
   "license": "BSD-3-Clause",
   "autoload": {
