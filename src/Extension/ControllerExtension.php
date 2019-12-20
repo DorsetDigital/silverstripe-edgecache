@@ -20,7 +20,7 @@ class ControllerExtension extends Extension
                 $request->addHeader('x-edgecache-time', $cacheTime);
                 $request->addHeader('x-edgecache-key', $cacheKey);
             } else {
-                $request->addHeader('x-cache', 'not active');
+                $request->addHeader('x-edgecache', 'not active');
             }
         }
     }
