@@ -3,6 +3,7 @@
 namespace DorsetDigital\EdgeCacher;
 
 use SilverStripe\Core\Extension;
+use DorsetDigital\EdgeCache\Client\Cloudflare;
 
 class PageExtension extends Extension
 {
@@ -45,7 +46,7 @@ class PageExtension extends Extension
         if ($this->owner->config()->get('cache_enabled') !== true) {
             return true;
         }
-        $client = EdgeFactory::buildFor($this->owner->config()->get('network'));
+        $client = Cloudflare::create();
         $link = $this->owner->Link();
         $client->expirePage($link);
     }
